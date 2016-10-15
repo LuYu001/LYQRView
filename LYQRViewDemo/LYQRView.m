@@ -1,14 +1,13 @@
 //
 //  LYQRView.m
-//  test
+//  LYQRView
 //
 //  Created by luyu on 16/10/14.
-//  Copyright © 2016年 ybejia.com. All rights reserved.
+//  Copyright © 2016年 luyu. All rights reserved.
 //
 
 #import "LYQRView.h"
 #import <Photos/Photos.h>
-@import SVProgressHUD;
 
 @interface LYQRView ()
 @property (weak, nonatomic)NSString *contentStr;
@@ -39,7 +38,7 @@
         
         // 5.将CIImage转换成UIImage，并放大显示
         self.QRImageView = [[UIImageView alloc] init];
-        self.QRImageView.userInteractionEnabled = YES;
+        self.QRImageView.userInteractionEnabled = _enablePress;
         self.QRImageView.contentMode = UIViewContentModeScaleAspectFit;
         self.QRImageView.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:_size];
         
@@ -65,6 +64,11 @@
     
     return [self initWithFrame:frame];
     
+}
+
+- (instancetype)initQRViewWithFrame:(CGRect)frame Content:(NSString *)string {
+    
+    return [self initQRViewWithFrame:frame Content:string enableLongPressSaveToAlbum:NO];
 }
 
 - (void)layoutSubviews {
@@ -173,7 +177,8 @@
     PHAssetCollection *createdCollection = self.createdCollection;
     
     if (createdAssets == nil || createdCollection == nil) {
-        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
+        NSLog(@"保存失败！");
+//        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
         return;
     }
     
@@ -186,9 +191,11 @@
     
     // 保存结果
     if (error) {
-        [SVProgressHUD showErrorWithStatus:@"保存失败！您可以手动截图保存"];
+        NSLog(@"保存失败！您可以手动截图保存");
+//        [SVProgressHUD showErrorWithStatus:@"保存失败！您可以手动截图保存"];
     } else {
-        [SVProgressHUD showSuccessWithStatus:@"二维码已保存到系统相册"];
+        NSLog(@"二维码已保存到系统相册");
+//        [SVProgressHUD showSuccessWithStatus:@"二维码已保存到系统相册"];
     }
 }
 
@@ -216,12 +223,13 @@
                     if (oldStatus == PHAuthorizationStatusNotDetermined) return;
                     
                     NSLog(@"提醒用户打开相册的访问开关");
-                    [SVProgressHUD showErrorWithStatus:@"请前往系统设置打开允许访问照片"];
+//                    [SVProgressHUD showErrorWithStatus:@"请前往系统设置打开允许访问照片"];
                     break;
                 }
                     
                 case PHAuthorizationStatusRestricted: {
-                    [SVProgressHUD showErrorWithStatus:@"因系统原因，无法访问相册！"];
+                    NSLog(@"因系统原因，无法访问相册！");
+//                    [SVProgressHUD showErrorWithStatus:@"因系统原因，无法访问相册！"];
                     break;
                 }
                     

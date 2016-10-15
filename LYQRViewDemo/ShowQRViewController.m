@@ -7,16 +7,42 @@
 //
 
 #import "ShowQRViewController.h"
-
+#import "LYQRView.h"
 @interface ShowQRViewController ()
+
+@property (assign, nonatomic)CGFloat oldBrightness;
 
 @end
 
 @implementation ShowQRViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _oldBrightness = [[UIScreen mainScreen] brightness];
+    
+    [[UIScreen mainScreen] setBrightness:1.f];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[UIScreen mainScreen] setBrightness:_oldBrightness];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
+    CGFloat x = CGRectGetMidX(self.view.frame)-100;
+    CGFloat y = CGRectGetMidY(self.view.frame)-100;
+    
+    CGRect frame = CGRectMake(x, y, 200, 200);
+    
+    LYQRView *QRView = [[LYQRView alloc] initQRViewWithFrame:frame Content:_contentString enableLongPressSaveToAlbum:YES];
+    [self.view addSubview:QRView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

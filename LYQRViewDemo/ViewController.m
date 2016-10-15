@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-
+#import "ShowQRViewController.h"
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *contentTextField;
 
 @end
 
@@ -19,6 +20,12 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)createQRView:(id)sender {
+    ShowQRViewController *sVC = [[ShowQRViewController alloc] init];
+    sVC.contentString = _contentTextField.text;
+    [self showViewController:sVC sender:nil];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

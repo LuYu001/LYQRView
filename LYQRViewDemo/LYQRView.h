@@ -1,9 +1,9 @@
 //
 //  LYQRView.h
-//  test
+//  LYQRView
 //
 //  Created by luyu on 16/10/14.
-//  Copyright © 2016年 ybejia.com. All rights reserved.
+//  Copyright © 2016年 luyu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -23,6 +23,7 @@
  */
 - (instancetype)initQRViewWithFrame:(CGRect)frame Content:(NSString *)string enableLongPressSaveToAlbum:(BOOL)enable;
 
+- (instancetype)initQRViewWithFrame:(CGRect)frame Content:(NSString *)string;
 
 
 @end

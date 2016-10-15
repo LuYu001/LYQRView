@@ -10,4 +10,6 @@
 
 @interface ShowQRViewController : UIViewController
 
+@property (strong, nonatomic)NSString *contentString;
+
 @end

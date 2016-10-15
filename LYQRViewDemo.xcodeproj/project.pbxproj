@@ -15,6 +15,8 @@
 		BC87BDE11DB223A40023C99D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC87BDDF1DB223A40023C99D /* LaunchScreen.storyboard */; };
 		BC87BDEC1DB223A50023C99D /* LYQRViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC87BDEB1DB223A50023C99D /* LYQRViewDemoTests.m */; };
 		BC87BDF71DB223A50023C99D /* LYQRViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC87BDF61DB223A50023C99D /* LYQRViewDemoUITests.m */; };
+		BC87BE061DB225240023C99D /* ShowQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC87BE051DB225240023C99D /* ShowQRViewController.m */; };
+		BC87BE0A1DB225C10023C99D /* LYQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC87BE091DB225C10023C99D /* LYQRView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		BC87BDF21DB223A50023C99D /* LYQRViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYQRViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC87BDF61DB223A50023C99D /* LYQRViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYQRViewDemoUITests.m; sourceTree = "<group>"; };
 		BC87BDF81DB223A50023C99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC87BE041DB225240023C99D /* ShowQRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowQRViewController.h; sourceTree = "<group>"; };
+		BC87BE051DB225240023C99D /* ShowQRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowQRViewController.m; sourceTree = "<group>"; };
+		BC87BE081DB225C10023C99D /* LYQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQRView.h; sourceTree = "<group>"; };
+		BC87BE091DB225C10023C99D /* LYQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQRView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		BC87BDD01DB223A40023C99D /* LYQRViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BC87BE071DB225B20023C99D /* LYQRView */,
 				BC87BDD41DB223A40023C99D /* AppDelegate.h */,
 				BC87BDD51DB223A40023C99D /* AppDelegate.m */,
 				BC87BDD71DB223A40023C99D /* ViewController.h */,
@@ -110,6 +117,8 @@
 				BC87BDDF1DB223A40023C99D /* LaunchScreen.storyboard */,
 				BC87BDE21DB223A40023C99D /* Info.plist */,
 				BC87BDD11DB223A40023C99D /* Supporting Files */,
+				BC87BE041DB225240023C99D /* ShowQRViewController.h */,
+				BC87BE051DB225240023C99D /* ShowQRViewController.m */,
 			);
 			path = LYQRViewDemo;
 			sourceTree = "<group>";
@@ -138,6 +147,15 @@
 				BC87BDF81DB223A50023C99D /* Info.plist */,
 			);
 			path = LYQRViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		BC87BE071DB225B20023C99D /* LYQRView */ = {
+			isa = PBXGroup;
+			children = (
+				BC87BE081DB225C10023C99D /* LYQRView.h */,
+				BC87BE091DB225C10023C99D /* LYQRView.m */,
+			);
+			name = LYQRView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +225,7 @@
 				TargetAttributes = {
 					BC87BDCD1DB223A40023C99D = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2H35526957;
 						ProvisioningStyle = Automatic;
 					};
 					BC87BDE61DB223A50023C99D = {
@@ -273,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC87BE061DB225240023C99D /* ShowQRViewController.m in Sources */,
 				BC87BDD91DB223A40023C99D /* ViewController.m in Sources */,
+				BC87BE0A1DB225C10023C99D /* LYQRView.m in Sources */,
 				BC87BDD61DB223A40023C99D /* AppDelegate.m in Sources */,
 				BC87BDD31DB223A40023C99D /* main.m in Sources */,
 			);
@@ -424,7 +445,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2H35526957;
 				INFOPLIST_FILE = LYQRViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = luyu.LYQRViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,7 +459,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2H35526957;
 				INFOPLIST_FILE = LYQRViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = luyu.LYQRViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
