@@ -534,6 +534,7 @@
 				BC87BDFD1DB223A50023C99D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC87BDFE1DB223A50023C99D /* Build configuration list for PBXNativeTarget "LYQRViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +543,7 @@
 				BC87BE001DB223A50023C99D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC87BE011DB223A50023C99D /* Build configuration list for PBXNativeTarget "LYQRViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +552,7 @@
 				BC87BE031DB223A50023C99D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -20,7 +20,9 @@
     [super viewWillAppear:animated];
     _oldBrightness = [[UIScreen mainScreen] brightness];
     
-    [[UIScreen mainScreen] setBrightness:1.f];
+    if (_oldBrightness < 0.5) {
+        [[UIScreen mainScreen] setBrightness:0.6f];
+    }
     
 }
 
