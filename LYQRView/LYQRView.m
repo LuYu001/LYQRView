@@ -178,7 +178,6 @@
     
     if (createdAssets == nil || createdCollection == nil) {
         NSLog(@"保存失败！");
-//        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
         return;
     }
     
@@ -192,10 +191,8 @@
     // 保存结果
     if (error) {
         NSLog(@"保存失败！您可以手动截图保存");
-//        [SVProgressHUD showErrorWithStatus:@"保存失败！您可以手动截图保存"];
     } else {
         NSLog(@"二维码已保存到系统相册");
-//        [SVProgressHUD showSuccessWithStatus:@"二维码已保存到系统相册"];
     }
 }
 
@@ -223,13 +220,11 @@
                     if (oldStatus == PHAuthorizationStatusNotDetermined) return;
                     
                     NSLog(@"提醒用户打开相册的访问开关");
-//                    [SVProgressHUD showErrorWithStatus:@"请前往系统设置打开允许访问照片"];
                     break;
                 }
                     
                 case PHAuthorizationStatusRestricted: {
                     NSLog(@"因系统原因，无法访问相册！");
-//                    [SVProgressHUD showErrorWithStatus:@"因系统原因，无法访问相册！"];
                     break;
                 }
                     
@@ -239,45 +234,6 @@
         });
     }];
     
-    // PHAuthorizationStatusNotDetermined
-    // 用户还没有对当前App授权过(用户从未点击过Don't Allow或者OK按钮)
-    
-    // PHAuthorizationStatusRestricted
-    // 因为一些系统原因导致无法访问相册（比如家长控制）
-    
-    // PHAuthorizationStatusDenied
-    // 用户已经明显拒绝过当前App访问相片数据（用户已经点击过Don't Allow按钮）
-    
-    // PHAuthorizationStatusAuthorized
-    // 用户已经允许过当前App访问相片数据（用户已经点击过OK按钮）
-    
-    //    switch ([PHPhotoLibrary authorizationStatus]) {
-    //        case PHAuthorizationStatusAuthorized: {
-    //            [self saveImageIntoAlbum];
-    //            break;
-    //        }
-    //
-    //        case PHAuthorizationStatusDenied: {
-    //            // 提醒用户打开访问开关
-    //            break;
-    //        }
-    //
-    //        case PHAuthorizationStatusRestricted: {
-    //            [SVProgressHUD showErrorWithStatus:@"因系统原因，无法访问相册！"];
-    //            break;
-    //        }
-    //
-    //        case PHAuthorizationStatusNotDetermined: {
-    //            // 弹框让用户做出选择
-    //            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-    //                // 用户刚才点击的是OK按钮
-    //                if (status == PHAuthorizationStatusAuthorized) {
-    //                    [self saveImageIntoAlbum];
-    //                }
-    //            }];
-    //            break;
-    //        }
-    //    }
 }
 
 

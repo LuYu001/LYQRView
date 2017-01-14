@@ -55,8 +55,8 @@
 		BC87BDF81DB223A50023C99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC87BE041DB225240023C99D /* ShowQRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowQRViewController.h; sourceTree = "<group>"; };
 		BC87BE051DB225240023C99D /* ShowQRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowQRViewController.m; sourceTree = "<group>"; };
-		BC87BE081DB225C10023C99D /* LYQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQRView.h; sourceTree = "<group>"; };
-		BC87BE091DB225C10023C99D /* LYQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQRView.m; sourceTree = "<group>"; };
+		BC87BE081DB225C10023C99D /* LYQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYQRView.h; path = LYQRView/LYQRView.h; sourceTree = SOURCE_ROOT; };
+		BC87BE091DB225C10023C99D /* LYQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYQRView.m; path = LYQRView/LYQRView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC71C2BD1E2A613900CD421A /* LYQRView */ = {
+			isa = PBXGroup;
+			children = (
+				BC87BE081DB225C10023C99D /* LYQRView.h */,
+				BC87BE091DB225C10023C99D /* LYQRView.m */,
+			);
+			path = LYQRView;
+			sourceTree = "<group>";
+		};
 		BC87BDC51DB223A40023C99D = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +116,7 @@
 		BC87BDD01DB223A40023C99D /* LYQRViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BC87BE071DB225B20023C99D /* LYQRView */,
+				BC71C2BD1E2A613900CD421A /* LYQRView */,
 				BC87BDD41DB223A40023C99D /* AppDelegate.h */,
 				BC87BDD51DB223A40023C99D /* AppDelegate.m */,
 				BC87BDD71DB223A40023C99D /* ViewController.h */,
@@ -147,15 +156,6 @@
 				BC87BDF81DB223A50023C99D /* Info.plist */,
 			);
 			path = LYQRViewDemoUITests;
-			sourceTree = "<group>";
-		};
-		BC87BE071DB225B20023C99D /* LYQRView */ = {
-			isa = PBXGroup;
-			children = (
-				BC87BE081DB225C10023C99D /* LYQRView.h */,
-				BC87BE091DB225C10023C99D /* LYQRView.m */,
-			);
-			name = LYQRView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +220,7 @@
 		BC87BDC61DB223A40023C99D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = luyu;
 				TargetAttributes = {
 					BC87BDCD1DB223A40023C99D = {
@@ -369,6 +369,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -417,6 +418,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
